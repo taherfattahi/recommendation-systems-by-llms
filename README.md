@@ -1,4 +1,4 @@
-# Enhancing Recommendation Systems with Large Language Models(RAG - LangChain - OpenAI)
+# Enhancing Recommendation Systems with Large Language Models (RAG - LangChain - OpenAI)
 
 ![Screenshot](images/framework.png)
 
