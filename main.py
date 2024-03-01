@@ -17,11 +17,11 @@ openai_api_key = ""
 client = OpenAI(api_key=openai_api_key)
 
 anime = pd.read_csv('data/anime_with_synopsis.csv')
-anime.head()
+# anime.head()
 
 anime['combined_info'] = anime.apply(
     lambda row: f"Title: {row['Name']}. Overview: {row['sypnopsis']} Genres: {row['Genres']}", axis=1)
-anime.head(2)
+# anime.head(2)
 
 # print(anime)
 
@@ -41,7 +41,7 @@ def get_embedding(text, model="text-embedding-3-small"):
 
 
 anime["embedding"] = anime.combined_info.apply(lambda x: get_embedding(x, model=embedding_model))
-anime.head()
+# anime.head()
 
 anime.rename(columns={'embedding': 'vector'}, inplace=True)
 anime.rename(columns={'combined_info': 'text'}, inplace=True)
