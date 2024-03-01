@@ -17,7 +17,7 @@ openai_api_key = ""
 client = OpenAI(api_key=openai_api_key)
 
 anime = pd.read_csv('data/anime_with_synopsis.csv')
-# anime.head()
+anime.head()
 
 anime['combined_info'] = anime.apply(
     lambda row: f"Title: {row['Name']}. Overview: {row['sypnopsis']} Genres: {row['Genres']}", axis=1)
