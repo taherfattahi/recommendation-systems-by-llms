@@ -1,5 +1,10 @@
+
+import os
 import pandas as pd
 import tiktoken
+
+# For loading environment variables
+from dotenv import load_dotenv
 
 import lancedb
 
@@ -13,7 +18,10 @@ from langchain.prompts import PromptTemplate
 from langchain_community.callbacks import get_openai_callback
 from langchain_community.vectorstores import LanceDB
 
-openai_api_key = ""
+# 1) Load your .env
+load_dotenv()  
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=openai_api_key)
 
 anime = pd.read_csv('data/anime_with_synopsis.csv')
